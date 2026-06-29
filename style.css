@@ -1,0 +1,92 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+
+html,body{
+    width: 100%;
+    height:100%;
+}
+
+header{
+    display : flex;
+    justify-content: space-between;
+    background: rgb(127, 127, 6);
+    padding: 20px 30px;
+}
+
+main{
+    display : flex;
+    flex-wrap : wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+
+}
+
+.outerDiv{
+     
+    border : 2px solid black;
+    width : 350px;
+    display : flex;
+    flex-direction : column;
+    gap : 30px;
+    align-items: center;
+    padding : 15px 10px;
+    border-radius: 30px;
+    
+}
+ 
+.price_cart{
+    display: flex;
+    align-items: center;
+    gap : 100px;
+    
+}
+
+.cart{
+    background: black;
+    padding: 10px 20px;
+    color: bisque;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.contains{
+    border : 2px solid black;
+    width : 900px 500px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    padding : 15px 10px;
+    border-radius: 30px;
+
+}
+
+.p_c{
+    display : flex;
+    align-items: center;
+    gap : 150px;
+}
+.cart{
+    background: black;
+    padding: 10px 20px;
+    color: bisque;
+    font-weight: bold;
+
+}
+
+.cart-button:hover {
+    background-color: black;
+    color: bisque;
+    transform: scale(1.05);
+    width: 50px;
+    height: inherit;
+
+}
+

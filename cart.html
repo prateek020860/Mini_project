@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title >Cart</title>
+
+<style>
+
+body{
+
+    
+
+font-family:Arial;
+
+}
+
+main{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:20px;
+
+padding:20px;
+
+}
+
+.box{
+
+border:1px solid gray;
+
+padding:10px;
+
+border-radius:10px;
+
+}
+
+img{
+
+width:200px;
+
+height:200px;
+
+object-fit:cover;
+
+}
+
+button{
+
+padding:8px;
+
+margin:5px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body bgcolor="bisque">
+
+<h1 style="display: flex; justify-content: center; background: rgb(127, 127, 6);">My Cart</h1>
+
+<a href="index.html">← Back To Products</a>
+
+<h2 id="total"></h2>
+
+<main></main>
+
+<script src="cart.js"></script>
+
+</body>
+
+</html>

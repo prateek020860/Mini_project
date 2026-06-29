@@ -1,0 +1,6 @@
+header main:
+logo and cart
+
+now fetch in script
+dummyjson.com
+

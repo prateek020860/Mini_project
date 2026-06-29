@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="bisque">
+
+    <h1 style="display: flex; justify-content: center; background: rgb(127, 127, 6);">Product Details</h1>
+
+    <main>
+
+    </main>
+
+    <Script>
+        let productId = new URLSearchParams(window.location.search);
+        let id = productId.get("id");
+        
+        (async function productData(){
+            let url = `https://dummyjson.com/products/${id}`; 
+            let main = document.querySelector("main");  
+            let res = await fetch(url);
+            let data = await res.json();
+            let dataarr = [data];
+
+            // console.log(data);
+            dataarr.map((el)=>{
+            
+            let contains = document.createElement("div");
+            let p_c = document.createElement("div");
+            let heading = document.createElement("h2");
+            let image = document.createElement("img");
+            let description = document.createElement("p");
+            let category = document.createElement("h3");
+            let price = document.createElement("p");
+            let cart = document.createElement("button");
+
+            heading.innerText = el.title;
+            image.src=el.thumbnail; 
+            description.innerText = el.description;
+            category.innerText = `Category : ${el.category}`;
+            price.innerText=`Rs ${Math.ceil(el.price*95)}/-`;
+            cart.innerText = "Add to cart";
+
+            image.style.width="500px";
+
+            contains.classList.add("contains");
+            p_c.classList.add("p_c");
+            cart.classList.add("cart");
+
+            cart.addEventListener("click",(e)=>{
+
+            e.preventDefault();
+
+            let cartItems=JSON.parse(localStorage.getItem("cart")) || [];
+
+            let index=cartItems.findIndex((item)=>item.id===el.id);
+
+            if(index!=-1){
+
+                cartItems[index].quantity++;
+
+            }
+            else{
+
+                cartItems.push({
+
+                    ...el,
+
+                    quantity:1
+
+                });
+
+            }
+
+            localStorage.setItem("cart",JSON.stringify(cartItems));
+
+            alert("Added To Cart");
+
+        });
+
+            p_c.append(price,cart)
+
+            contains.append(heading,image,description,category,p_c);
+            main.append(contains);
+
+
+        })
+
+
+        })()
+    </Script>
+</body>
+</html>
